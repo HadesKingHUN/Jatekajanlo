@@ -35,7 +35,7 @@ class Program
 
                 if (recommendedGame == null)
                 {
-                    Console.WriteLine("Sajnáljuk, de nincs több ajánlatunk ebben a kategóriában.");
+                    // Console.WriteLine("Sajnáljuk, de nincs több ajánlatunk ebben a kategóriában.");
                     elfogadva = true; 
                 }
             }

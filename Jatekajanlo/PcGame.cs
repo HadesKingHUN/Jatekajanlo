@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Jatekajanlo
 {
-    internal class PcGames
+    public class PsGame : Game
     {
+        public PsGame(string name, string type) : base(name, "ps", type) { }
     }
 }

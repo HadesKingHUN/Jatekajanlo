@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Jatekajanlo
 {
-    internal class XboxGames
+    public class PcGame : Game
     {
+        public PcGame(string name, string type) : base(name, "pc", type) { }
     }
 }
