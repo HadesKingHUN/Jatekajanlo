@@ -11,53 +11,66 @@ namespace Jatekajanlo
 
         public Gameajanlo()
         {
-            games = new List<Game>
-        {
-                // Xbox játékok
-                new XboxGame("Halo Infinite", "akció"),
-                new XboxGame("Sea of Thieves", "Kaland"),
-                new XboxGame("Gears 5", "akció"),
-                new XboxGame("Forza 4", "sport"),
-                new XboxGame("Forza 5", "sport"),
-                new XboxGame("State of Decay 2", "akció"),
-                new XboxGame("Ori and the Will of Wisps", "kaland"),
-                new XboxGame("Grounded", "túlélő"),
-                new XboxGame("Fable", "Kaland"),
-                new XboxGame("Everwind", "kaland"),
-
-               // PS játékok
-                new PsGame("God of War", "akció"),
-                new PsGame("The Last of Us Part II", "kaland"),
-                new PsGame("Spider-Man: Miles Morales", "kaland"),
-                new PsGame("Ratchet & Clank: Rift Apart", "kaland"),
-                new PsGame("Horizon Forbidden West", "akció"),
-                new PsGame("Grand Turismo 7", "sport"),
-                new PsGame("Days Gone", "túlélő"),
-
-                // PC játékok
-                new PcGame("Forest 2", "túlélő"),
-                new PcGame("Counter-Strike: Global Offensive (CS:GO)", "akció"),
-                new PcGame("Fortnite", "akció"),
-                new PcGame("The Witcher 3: Wild Hunt", "kaland"),
-                new PcGame("Grand Theft Auto V", "Akció"),
-                new PcGame("Hades", "akció"),
-                new PcGame("Rocket League", "sport"),
-                new PcGame("EA FC 24", "sport"),
-
-
-        };
+            games = new List<Game>();
+            LoadGamesFromFile("jatekok.txt");
         }
-        //public Game KovetkezoAjanlat(string platform, string type)
-        //{
-        //return games.FirstOrDefault(g => g.Platform == platform && g.Type == type);
-        //}
+
+        private void LoadGamesFromFile(string filePath)
+        {
+            try
+            {
+                var lines = File.ReadAllLines(filePath);
+                string currentPlatform = "";
+
+                foreach (var line in lines)
+                {
+                    if (string.IsNullOrWhiteSpace(line)) continue;
+
+                    if (line.StartsWith("//"))
+                    {
+                        currentPlatform = line.TrimStart('/').Trim();
+                    }
+                    else
+                    {
+                        var parts = line.Split(',');
+                        if (parts.Length == 2)
+                        {
+                            string title = parts[0].Trim();
+                            string type = parts[1].Trim();
+
+                            switch (currentPlatform.ToLower())
+                            {
+                                case "ps játékok":
+                                    games.Add(new PsGame(title, type));
+                                    break;
+                                case "xbox játékok":
+                                    games.Add(new XboxGame(title, type));
+                                    break;
+                                case "pc játékok":
+                                    games.Add(new PcGame(title, type));
+                                    break;
+                                default:
+                                    Console.WriteLine($"Ismeretlen platform: {currentPlatform}");
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Hiba történt a játékok beolvasása közben: {ex.Message}");
+            }
+        }
+
+
         public Game Ajanlottjatek(string platform, string type)
         {
             Random rnd = new Random();
-            // Kizárjuk azokat a játékokat, amelyek már ajánlva voltak, és csak a megfelelő platformú játékokat vesszük figyelembe 
+           
             var filteredGames = games.Where(g => g.Platform == platform && g.Type == type && !recommendedGames.Contains(g)).ToList();
 
-            // Ellenőrizzük, hogy a játék típusa megfelel-e a keresett platformnak
+           
             filteredGames = filteredGames.Where(g =>
             {
                 switch (platform.ToLower())
@@ -88,7 +101,7 @@ namespace Jatekajanlo
 
             int index = rnd.Next(filteredGames.Count);
             Game recommendedGame = filteredGames[index];
-            recommendedGames.Add(recommendedGame); // Hozzáadjuk az ajánlott játékok listájához
+            recommendedGames.Add(recommendedGame); 
             return recommendedGame;
         }
 
