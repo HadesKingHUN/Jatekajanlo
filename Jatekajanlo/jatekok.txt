@@ -1,0 +1,61 @@
+// Xbox játékok
+Halo Infinite, akció
+Sea of Thieves, Kaland
+Gears 5, akció
+Forza 4, sport
+Forza 5, sport
+State of Decay 2, akció
+Ori and the Will of Wisps, kaland
+Grounded, túlélő
+Fable, Kaland
+Everwind, kaland
+Ashen, akció
+Cuphead, akció
+Dead Cells, akció
+Forza Horizon 4, sport
+Gears Tactics, akció
+Hellblade: Senua's Sacrifice, akció
+ReCore: Definitive Edition, akció
+Sea of Solitude, akció
+State of Decay 2: Juggernaut Edition, akció
+Tunic, akció
+
+// PS játékok
+God of War, akció
+The Last of Us Part II, kaland
+Spider-Man: Miles Morales, kaland
+Ratchet & Clank: Rift Apart, kaland
+Horizon Forbidden West, akció
+Grand Turismo 7, sport
+Days Gone, túlélő
+Uncharted: Legacy of Thieves Collection, kaland
+Demon's Souls, akció
+Ghost of Tsushima, akció
+Death Stranding, kaland
+Bloodborne, akció
+Persona 5 Royal, RPG
+Final Fantasy VII Remake, RPG
+Sackboy: A Big Adventure, platform
+Astro's Playroom, platform
+Returnal, akció
+Resident Evil Village, horror
+
+// PC játékok
+Forest 2, túlélő
+Counter-Strike: Global Offensive (CS:GO), akció
+Fortnite, akció
+The Witcher 3: Wild Hunt, kaland
+Grand Theft Auto V, Akció
+Hades, akció
+Rocket League, sport
+EA FC 24, sport
+Cyberpunk 2077, akció
+Valheim, túlélő
+Among Us, társas
+Phasmophobia, horror
+Apex Legends, akció
+Doom Eternal, akció
+Baldur's Gate 3, RPG
+Disco Elysium, RPG
+Minecraft, túlélő
+Stardew Valley, szimuláció

@@ -11,13 +11,13 @@ namespace Jatekajanlo
 
         public Gameajanlo()
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory;
-            string filename = "myFile.txt";
-            string filePath = Path.Combine(path, filename);
+           
+            string filename = "../../../jatekok.txt";
+     
             games = new List<Game>();
-            LoadGamesFromFile("jatekok.txt");
+            LoadGamesFromFile(filename);
         }
-
+        
         private void LoadGamesFromFile(string filePath)
         {
             try
