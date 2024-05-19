@@ -9,7 +9,7 @@ class Program
         string name = Console.ReadLine();
         Felhasznalo user = new Felhasznalo(name);
 
-        Console.WriteLine("Kérlek válassz platformot (xbox/ps/pc):");
+        Console.WriteLine($"Üdvözöllek {name}, Kérlek válassz platformot (xbox/ps/pc):");
         user.PreferredPlatform = Console.ReadLine().ToLower();
 
         Console.WriteLine("Milyen típusú játékot szeretnél? (akció/kaland/stratégia/Sport/túlélő):");
@@ -35,7 +35,6 @@ class Program
 
                 if (recommendedGame == null)
                 {
-                    // Console.WriteLine("Sajnáljuk, de nincs több ajánlatunk ebben a kategóriában.");
                     elfogadva = true; 
                 }
             }

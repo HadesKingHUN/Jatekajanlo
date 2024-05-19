@@ -11,6 +11,9 @@ namespace Jatekajanlo
 
         public Gameajanlo()
         {
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+            string filename = "myFile.txt";
+            string filePath = Path.Combine(path, filename);
             games = new List<Game>();
             LoadGamesFromFile("jatekok.txt");
         }
